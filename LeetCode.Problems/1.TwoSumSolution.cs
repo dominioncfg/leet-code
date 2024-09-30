@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-public interface ITwoSumSolution
+﻿public interface ITwoSumSolution
 {
     public int[] TwoSum(int[] nums, int target);
 }
