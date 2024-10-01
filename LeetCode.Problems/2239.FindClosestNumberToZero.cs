@@ -1,8 +1,4 @@
-﻿
-
-using System;
-
-public interface INumClosestToZero
+﻿public interface INumClosestToZero
 {
     int FindClosestNumber(int[] nums);
 }
