@@ -1,4 +1,4 @@
-﻿namespace LeetCode.T3sts;
+﻿namespace LeetCode.Tests;
 
 /*
 383. Ransom Note
