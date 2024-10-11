@@ -1,4 +1,7 @@
-﻿public class ListNode
+﻿using System.Diagnostics;
+
+[DebuggerDisplay("Value = {val}")]
+public class ListNode
 {
     public int val;
     public ListNode? next;
