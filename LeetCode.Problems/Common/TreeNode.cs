@@ -1,4 +1,7 @@
 ﻿
+using System.Diagnostics;
+
+[DebuggerDisplay("Value = {val}")]
 public class TreeNode
 {
     public int val;
