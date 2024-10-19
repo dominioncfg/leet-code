@@ -64,5 +64,41 @@ public class TreeNode
 
         return result;
     }
+
+    public static TreeNode? FromEnumerable(int?[]? definition)
+    {
+        if (definition is null || definition.Length == 0 || definition[0] is null)
+            return null;
+
+
+        var queue = new Queue<TreeNode>();
+        
+        var root = new TreeNode(definition[0]!.Value);
+        var current = root;
+        queue.Enqueue(root);
+        var i = 1;
+        while (queue.Count > 0 && i < definition.Length)
+        {
+           var toNode = queue.Dequeue();
+
+            if (definition[i].HasValue)
+            {
+                var nodeLeft = new TreeNode(definition[i]!.Value);
+                toNode.left = nodeLeft;
+                queue.Enqueue(nodeLeft);
+            }
+
+            if(i+1< definition.Length && definition[i+1].HasValue)
+            {
+                var nodeRight = new TreeNode(definition[i +1]!.Value);
+                toNode.right = nodeRight;
+                queue.Enqueue(nodeRight);
+            }
+
+            i += 2;
+        }
+
+        return root;
+    }
 }
 
