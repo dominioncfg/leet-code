@@ -54,5 +54,22 @@ public class ValidateBinarySearchTreeTests
         result.Should().BeFalse();
     }
 
-   
+    [Fact]
+    public void Test4()
+    {
+        var tree = TreeNode.FromEnumerable([2147483647]);
+        var result = sut.IsValidBST(tree!);
+        result.Should().BeTrue();
+    }
+
+
+    [Fact]
+    public void Test5()
+    {
+        var tree = TreeNode.FromEnumerable([1, null, 1]);
+        var result = sut.IsValidBST(tree!);
+        result.Should().BeFalse();
+    }
+
+
 }

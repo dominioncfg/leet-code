@@ -7,6 +7,33 @@ public class ValidateBinarySearchTreeRecursive : IValidateBinarySearchTree
 {
     public bool IsValidBST(TreeNode root)
     {
+        return IsValidBinarySearchTree(root);
+    }
+
+    public bool IsValidBinarySearchTree(TreeNode? root, int? min =  null, int? max = null)
+    {
+        if (root is null)
+            return true;
+
+        if (min.HasValue && root.val <= min)
+            return false;
+
+        if ( max.HasValue && root.val >= max)
+            return false;
+
+
+        if (!IsValidBinarySearchTree(root.left, min, root.val))
+            return false;
+
+        return IsValidBinarySearchTree(root.right, root.val, max);
+    }
+}
+
+
+public class ValidateBinarySearchTreeRecursivePreOrdenPointingToMin : IValidateBinarySearchTree
+{
+    public bool IsValidBST(TreeNode root)
+    {
         var isValidSoFar = true;
         var previous = (int?)null;
         IsValidBinarySearchTree(root, ref previous, ref isValidSoFar);
