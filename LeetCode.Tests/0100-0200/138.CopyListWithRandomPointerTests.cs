@@ -1,5 +1,5 @@
 ﻿namespace LeetCode.Tests;
-
+using Node = ICopyListWithRandomPointer.Node;
 /*
 138. Copy List with Random Pointer
 

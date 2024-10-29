@@ -1,7 +1,22 @@
-﻿
+﻿using Node = ICopyListWithRandomPointer.Node;
 public interface ICopyListWithRandomPointer
 {
     public Node CopyRandomList(Node head);
+
+
+    public class Node
+    {
+        public int val;
+        public Node next;
+        public Node random;
+
+        public Node(int _val)
+        {
+            val = _val;
+            next = null;
+            random = null;
+        }
+    }
 }
 
 public class CopyListWithRandomPointer : ICopyListWithRandomPointer
@@ -44,19 +59,5 @@ public class CopyListWithRandomPointer : ICopyListWithRandomPointer
         }
         
         return copies[head];
-    }
-}
-
-public class Node
-{
-    public int val;
-    public Node next;
-    public Node random;
-
-    public Node(int _val)
-    {
-        val = _val;
-        next = null;
-        random = null;
     }
 }
